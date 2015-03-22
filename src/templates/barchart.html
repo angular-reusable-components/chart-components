@@ -1,0 +1,41 @@
+<div>
+  <div class="barchart-component">
+    <div class="barchart-items" style="width: {{(item.value/max)*100}}%;" ng-repeat="item in data|orderBy:'-value'">
+      <div class="label-text">{{item.label}}</div>
+      <div class="value">{{item.value}}</div>
+    </div>
+
+  </div>
+
+  <style>
+
+    .barchart-component .barchart-items {
+      background-color: steelblue;
+      text-align: right;
+      padding: 10px 10px;
+      margin: 1px;
+      color: white;
+
+      display: flex;
+      flex-flow: row wrap;
+
+    }
+      .barchart-component .barchart-items > div {
+        flex: 1 auto;
+      }
+      .barchart-component .barchart-items .label-text {
+          text-align: left;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+      }
+      .barchart-component .barchart-items .count {
+          text-align: right;
+      }
+
+    .barchart-component {
+      font-size: 16px;
+      width: 100%;
+    }
+  </style>
+</div>
